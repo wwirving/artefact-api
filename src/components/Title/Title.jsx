@@ -4,7 +4,9 @@ import styles from "./Title.module.scss";
 const Title = () => {
   return (
     <>
-      <p>Title works</p>
+      <div className={styles.titleContainer}>
+        <h1>ARTEFACT</h1>
+      </div>
     </>
   );
 };

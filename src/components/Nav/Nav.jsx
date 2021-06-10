@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "./Nav.module.scss";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { next, prev } = props;
   return (
     <>
-      <p>Nav works</p>
+      <div className={styles.navContainer}>
+        <span onClick={prev}>PREV</span>
+        <span>INFO</span>
+        <span onClick={next}>NEXT</span>
+      </div>
     </>
   );
 };

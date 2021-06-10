@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./Search.module.scss";
 
-const Search = () => {
+const Search = (props) => {
+  const { updateSearchText } = props;
+
   return (
     <>
-      <p>Search works</p>
+      <input
+        type="text"
+        placeholder="SEARCH PHRASE..."
+        onInput={(e) => updateSearchText(e.target.value)}
+      ></input>
     </>
   );
 };

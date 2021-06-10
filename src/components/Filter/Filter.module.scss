@@ -1,0 +1,28 @@
+li {
+  text-decoration: none;
+  list-style-type: none;
+  line-height: 22px;
+}
+
+.libox {
+  display: flex;
+  & > p {
+    padding-left: 8px;
+  }
+}
+
+.title {
+  padding: 5px 0px;
+}
+.filters {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 2px;
+}
+
+.filterContainer {
+  border: 1px solid white;
+  padding-left: 10px;
+}
