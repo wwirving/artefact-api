@@ -51,7 +51,7 @@ const Card = (props) => {
   return (
     <>
       <div className={styles.imgBox}>
-        <div className={styles.description}>
+        <div className={(styles.description, styles.opaque)}>
           <p>TITLE -{sculpture.title}</p>
           <p>MEDIUM - {sculpture.medium}</p>
           <p>DATE - {sculpture.objectDate}</p>

@@ -18,7 +18,7 @@ const Filter = (props) => {
               p.style.color = "black";
             });
 
-            e.target.style.color = "red";
+            e.target.style.color = "#f03635";
             updateMedium(e.target);
           }}
         >
