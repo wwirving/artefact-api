@@ -1,148 +1,40 @@
 import React from "react";
 import styles from "./Filter.module.scss";
 
-const Filter = () => {
+const Filter = (props) => {
+  const { updateMedium } = props;
+
   return (
     <>
       <div className={styles.filterContainer}>
-        <p className={styles.title}>MEDIUM</p>
-        <div className={styles.filters}>
-          <ul>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>MARBLE</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>GLASS</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>WOOD</p>
-              </div>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>FABRIC</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>IRON</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.libox}>
-                <div>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="0.5"
-                      y="0.5"
-                      width="14"
-                      height="14"
-                      stroke="white"
-                    />
-                  </svg>
-                </div>
-                <p>MISC</p>
-              </div>
-            </li>
-          </ul>
+        <div className={styles.titleBox}>
+          <p className={styles.title}>MEDIUM</p>
+        </div>
+        <div
+          className={styles.filters}
+          onClick={(e) => {
+            const menuItems = document.querySelectorAll("p");
+            menuItems.forEach((p) => {
+              p.style.color = "black";
+            });
+
+            e.target.style.color = "red";
+            updateMedium(e.target);
+          }}
+        >
+          <p>Silk</p>
+          <p>Marble</p>
+          <p>Bronze</p>
+          <p>Clay</p>
+          <p>Gold</p>
+          <p>Metal</p>
+          <p>Paper</p>
+          <p>Stone</p>
+          <p>Silver</p>
+          <p>Copper</p>
+          <p>Ivory</p>
+          <p>Wood</p>
+          <p>Glass</p>
         </div>
       </div>
     </>

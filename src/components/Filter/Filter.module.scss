@@ -1,28 +1,34 @@
-li {
-  text-decoration: none;
-  list-style-type: none;
-  line-height: 22px;
-}
-
-.libox {
-  display: flex;
-  & > p {
-    padding-left: 8px;
-  }
-}
-
 .title {
-  padding: 5px 0px;
+  text-align: center;
+  justify-content: center;
+  color: black;
 }
 .filters {
   display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 2px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  & > p {
+    border: 1px solid black;
+    text-align: center;
+    padding: 7px;
+    margin: 2px;
+  }
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .filterContainer {
-  border: 1px solid white;
+  border: 1px solid black;
   padding-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

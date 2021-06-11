@@ -1,16 +1,36 @@
 input {
   width: 100%;
   height: 35px;
-  border: 1px solid white;
+  border: 1px solid black;
   padding-left: 10px;
+}
+
+input[type="text"]:focus {
+  outline: none; /* oranges! yey */
 }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchButton {
+  display: flex;
+  height: 35px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  margin-left: 20px;
 }

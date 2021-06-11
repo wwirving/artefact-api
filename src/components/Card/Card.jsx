@@ -10,6 +10,8 @@ const Card = (props) => {
 
   const [sculpture, setSculpture] = useState({});
 
+  const [image, setImage] = useState("");
+
   const getSculpture = (theIndex) => {
     const string = `${API_URL}${objects[theIndex]}`;
     return fetch(`${string}`)
@@ -26,24 +28,35 @@ const Card = (props) => {
   const updateSculpture = async (currentIndex) => {
     const apiObject = await getSculpture(currentIndex);
     setSculpture(apiObject);
-    console.log(sculpture);
-    console.log(index);
-    console.log(objects);
   };
 
-  useEffect(() => updateSculpture(index), [props.index]);
+  const updateImage = (currentSculpture) => {
+    if (Object.keys(sculpture).length > 1) {
+      if (sculpture.primaryImage.length > 1) {
+        setImage(sculpture.primaryImage);
+      } else {
+        setImage(sculpture.additionalImages[0]);
+      }
+    } else return "";
+  };
+
+  useEffect(() => {
+    updateSculpture(index);
+  }, [props.index]);
 
   useEffect(() => updateSculpture(index), [props.objects]);
+
+  useEffect(() => updateImage(sculpture), [props.index]);
 
   return (
     <>
       <div className={styles.imgBox}>
         <div className={styles.description}>
-          <p>TITLE - {sculpture.objectName}</p>
+          <p>TITLE -{sculpture.title}</p>
           <p>MEDIUM - {sculpture.medium}</p>
           <p>DATE - {sculpture.objectDate}</p>
         </div>
-        <img src={sculpture.primaryImage} alt="" />
+        <img src={image} alt="" onerror="this.style.display='none'" />
       </div>
     </>
   );
