@@ -43,7 +43,6 @@ function App() {
   const getObjects = (searchTerm) => {
     const string = `${API_URL}${searchTerm}&medium=${medium}`;
     setLastSearchTerm(searchTerm);
-    console.log(string);
     return fetch(`${string}`)
       .then((res) => res.json())
       .then((jsonResponse) => {
@@ -59,43 +58,46 @@ function App() {
   const increaseIndex = () => {
     if (index <= objectArr.length) {
       setIndex(index + 1);
-      console.log(index);
     }
   };
 
   const decreaseIndex = () => {
     if (index > 0) {
       setIndex(index - 1);
-      console.log(index);
     }
   };
 
-  const pulse = (lastSearch) => {
+  const pulse = async (e) => {
+    await updateObjects(lastSearchTerm);
     setIndex(index - index);
-    updateObjects(lastSearchTerm);
   };
 
   const updateObjects = async (searchTerm) => {
     const apiObjects = await getObjects(searchTerm);
-
     setObjectArr(apiObjects);
   };
 
-  const updateMedium = (searchTerm) => {
+  const updateMedium = async (searchTerm) => {
     setMedium(searchTerm.innerText);
-    pulse(lastSearchTerm);
+    // pulse(lastSearchTerm);
   };
+
+  useEffect(async ()=>{
+   pulse();
+  },[medium]);
+
+
 
   return (
     <div className={styles.page}>
       <div className={styles.mainContainer}>
         <div className={styles.inputBlock}>
           <Title />
-          <Filter updateMedium={updateMedium} />
+          <Filter changeMedium={updateMedium} />
           <Search
             updateSearchText={updateObjects}
             medium={medium}
-            onclick={increaseIndex}
+            reset={pulse}
           />
         </div>
         <div className={styles.outputBlock}>

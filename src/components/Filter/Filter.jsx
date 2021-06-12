@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./Filter.module.scss";
 
 const Filter = (props) => {
-  const { updateMedium } = props;
+  const { changeMedium } = props;
+
+
+  // assign variable on click
+
+  // run function to 
 
   return (
     <>
@@ -19,7 +24,7 @@ const Filter = (props) => {
             });
 
             e.target.style.color = "#f03635";
-            updateMedium(e.target);
+            changeMedium(e.target);
           }}
         >
           <p>Silk</p>

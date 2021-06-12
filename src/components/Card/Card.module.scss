@@ -1,3 +1,54 @@
+// small tablets/large smartphones (landscape)
+$screen-sm-min: 576px;
+// small tablets (portrait)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 882px;
+// large tablets/desktops
+$screen-xl-min: 1200px;
+
+// mixins
+
+// small devices
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// medium devices
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// large devices
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// extra-large devices
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// custom devices
+
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
 .imgBox {
   display: flex;
   border: 1px solid black;
@@ -8,6 +59,10 @@
   & > img {
     width: 100%; /* width of container */
     height: auto; /* height of container */
+    @include md {
+      width: auto;
+      height: 100%;
+    }
     object-fit: cover;
     text-indent: -10000px;
   }
@@ -18,13 +73,21 @@
   display: flex;
   line-height: 4;
   text-align: left;
+  padding: 5%;
+  border: 1px solid #f03635;
+  opacity: 0.9;
+  max-width: 80%;
+  max-height: 40%;
+  @include md {
+    max-width: 60%;
+    max-height: 60%;
+  }
+  transition: opacity 2s;
   position: fixed;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-y: scroll;
-  width: 330px;
-  height: 330px;
   & > p {
     text-align: center;
   }
@@ -32,4 +95,5 @@
 
 .opaque {
   display: none;
+  opacity: 0;
 }
