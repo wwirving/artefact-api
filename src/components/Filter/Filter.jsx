@@ -23,8 +23,13 @@ const Filter = (props) => {
               p.style.color = "black";
             });
 
+<<<<<<< Updated upstream
             e.target.style.color = "#f03635";
             changeMedium(e.target);
+=======
+            e.target.style.color = "#F03635";
+            updateMedium(e.target);
+>>>>>>> Stashed changes
           }}
         >
           <p>Silk</p>

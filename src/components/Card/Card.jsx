@@ -53,9 +53,14 @@ const Card = (props) => {
 
   return (
     <>
+<<<<<<< Updated upstream
       <div className={styles.imgBox}
       onClick={()=> setShowInfo(!showInfo)}>
         <div className={flipCard}>
+=======
+      <div className={styles.imgBox}>
+        <div className={(styles.description, styles.opaque)}>
+>>>>>>> Stashed changes
           <p>TITLE -{sculpture.title}</p>
           <p>MEDIUM - {sculpture.medium}</p>
           <p>DATE - {sculpture.objectDate}</p>

@@ -30,7 +30,7 @@ function App() {
 
   const [lastSearchTerm, setLastSearchTerm] = useState("");
 
-  const [toggleInfo, setTottleInfo] = useState(false);
+  const [toggleInfo, setToggleInfo] = useState(false);
 
   const [medium, setMedium] = useState("");
 
@@ -67,8 +67,18 @@ function App() {
     }
   };
 
+<<<<<<< Updated upstream
   const pulse = async (e) => {
     await updateObjects(lastSearchTerm);
+=======
+  // const switchInfo = () => {
+  //   if (isFaceDown){
+
+  //   }
+  // }
+
+  const pulse = (lastSearch) => {
+>>>>>>> Stashed changes
     setIndex(index - index);
   };
 

@@ -70,7 +70,7 @@ $screen-xl-min: 1200px;
 
 .description {
   z-index: 10;
-  display: flex;
+  display: none;
   line-height: 4;
   text-align: left;
   padding: 5%;
@@ -94,6 +94,9 @@ $screen-xl-min: 1200px;
 }
 
 .opaque {
+<<<<<<< Updated upstream
   display: none;
+=======
+>>>>>>> Stashed changes
   opacity: 0;
 }
